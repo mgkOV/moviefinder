@@ -32,9 +32,11 @@ dispatcher.register(payload => {
   switch (action.actionType) {
     case c.SEARCH_MOVIES:
       appApi.searchMovies(action.movie.title);
+      break;
     case c.RECEIVE_MOVIE:
       appStore.setMovieResults(action.movies);
       appStore.emitChange();
+      break;
   }
 
   return true;
